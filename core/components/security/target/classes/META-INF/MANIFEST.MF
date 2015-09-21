@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Built-By: marycochran
+Tool: Bnd-1.15.0
+Bundle-Name: Customer Application Security - security
+Created-By: Apache Maven Bundle Plugin
+Bundle-Vendor: Customer
+Build-Jdk: 1.7.0_79
+Bundle-Version: 1.0.0.SNAPSHOT
+Bnd-LastModified: 1442851356242
+Bundle-ManifestVersion: 2
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0
+Bundle-Description: Parent POM Customer Application
+Bundle-SymbolicName: security
+Bundle-DocURL: http://www.customer.com
+
