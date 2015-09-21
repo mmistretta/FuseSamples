@@ -18,9 +18,15 @@ public class InboundRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from(CXF_ENDPOINT).choice().when(header(CxfConstants.OPERATION_NAME).isEqualTo("postInbound")).bean(service, "postInbound")
+        //@formatter:off 
+        from(CXF_ENDPOINT)
+            .choice()
+                .when(header(CxfConstants.OPERATION_NAME).isEqualTo("postInbound"))
+                    .bean(service, "postInbound")
         // jaxb to xml
-            .otherwise().log(LoggingLevel.WARN, "unknown method");
+                .otherwise()
+                    .log(LoggingLevel.WARN, "unknown method");
+        //@formatter:on
     }
 
 }
