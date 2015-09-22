@@ -1,5 +1,4 @@
 com/customer/app/rest/impl/InboundResource.class
 com/customer/app/processor/InboundProcessor.class
 com/customer/app/route/InboundRoute.class
-com/customer/app/service/InboundService.class
 com/customer/app/route/ConverterRoute.class

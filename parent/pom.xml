@@ -47,42 +47,6 @@
     <apache.cxf.version>2.7.14</apache.cxf.version>
     <camel.version>2.12.0</camel.version>
     <faster.version>2.1.2</faster.version>
-    <felix.version>2.3.7</felix.version>
-    <geronimo.version>3.1</geronimo.version>
-    <jackson.jaxrs.version>1.9.12</jackson.jaxrs.version>
-    <javax.json.version>1.0.0.Final</javax.json.version>
-    <javax.mail.bundle.version>1.5.2</javax.mail.bundle.version>
-    <javax.mail.version>1.5</javax.mail.version>
-    <javax.servlet.version>3.0.1</javax.servlet.version>
-    <javax.validation.version>1.1.0.Final</javax.validation.version>
-    <jodatime.version>2.3</jodatime.version>
-    <jrecord.version>2.3.7</jrecord.version>
-    <maven.builder.helper.version>1.5</maven.builder.helper.version>
-    <nekohtml.version>1.9.21</nekohtml.version>
-    <osgi.core.version>4.3.0</osgi.core.version>
-    <servicemix.jsr311.version>1.9.0</servicemix.jsr311.version>
-    <spring.context.version>3.2.6.RELEASE</spring.context.version>
-    <spring.data.commons.version>1.7.1.RELEASE</spring.data.commons.version>
-    <spring.data.jpa.version>1.5.1.RELEASE</spring.data.jpa.version>
-    <spring.jdbc.version>3.2.8.RELEASE</spring.jdbc.version>
-    <spring.orm.version>3.2.8.RELEASE</spring.orm.version>
-    <spring.scopes.version>0.1.0-SNAPSHOT</spring.scopes.version>
-    <spring.security.oauth.version>2.0.3.RELEASE</spring.security.oauth.version>
-    <spring.security.version>3.2.4.RELEASE</spring.security.version>
-    <spring.test.version>3.2.8.RELEASE</spring.test.version>
-    <spring.web.version>3.2.9.RELEASE</spring.web.version>
-    <spring.webflow.version>2.4.1.RELEASE</spring.webflow.version>
-    <sun.xml.version>2.1.6</sun.xml.version>
-    <swagger-maven.version>3.0.1</swagger-maven.version>
-    <swagger.version>1.5.2-M2</swagger.version>
-    <thymeleaf.version>2.1.3.RELEASE</thymeleaf.version>
-    <tranql.connector.version>1.8</tranql.connector.version>
-    <tranql.mysql.version>1.6</tranql.mysql.version>
-    <twilio.version>3.6.2</twilio.version>
-    <unbescape.version>1.0</unbescape.version>
-    <version.apache.codec>1.6</version.apache.codec>
-    <version.httpcomponents>4.3</version.httpcomponents>
-    <version.jpa.plugin>2</version.jpa.plugin>
   </properties>
 
   <dependencyManagement>
