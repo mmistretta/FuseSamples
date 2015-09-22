@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:patient firstName="" id="0" lastName="" xmlns:p="http://www.redhat.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.redhat.com PatientDemographics.xsd ">
+  <p:address addressLine1="" addressLine2="" city="" state="" zipCode=""/>
+</p:patient>

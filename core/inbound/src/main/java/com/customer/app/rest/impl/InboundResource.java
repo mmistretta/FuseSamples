@@ -12,7 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.customer.app.Person;
+import com.customer.app.Patient;
 
 @Service
 @Path("/rest")
@@ -23,7 +23,7 @@ public class InboundResource {
     @POST
     @Path("/inbound")
     @Consumes("application/xml")
-    public Response postInbound(Person person) {
+    public Response postInbound(Patient person) {
         Response response = null;
         String recordId = Long.toString(System.nanoTime());
         LOGGER.info("Rest request received");
@@ -34,6 +34,7 @@ public class InboundResource {
         } else {
             try {
                 Map<String, Object> headers = new HashMap<String, Object>();
+                headers.put("person", person);
             } catch (Exception ex) {
                 LOGGER.error("Something went wrong");
             }
@@ -41,7 +42,7 @@ public class InboundResource {
         return response;
     }
 
-    private boolean isValidRequest(Person person) {
+    private boolean isValidRequest(Patient person) {
         return true;
     }
 }

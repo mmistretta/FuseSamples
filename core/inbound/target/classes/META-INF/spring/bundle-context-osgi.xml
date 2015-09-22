@@ -43,8 +43,8 @@
     <property name="unmarshallAsJaxbElement" value="true" />
     <property name="jaxbElementClassMap">
       <map>
-        <entry key="com.customer.app.Person" value="com.customer.app.Person" />
-        <entry key="com.customer.app.response.ESBResponse" value="com.customer.app.response.ESBResponse" />
+        <entry key="com.customer.app.Patient" value="com.customer.app.Patient" />
+<!--         <entry key="com.customer.app.response.ESBResponse" value="com.customer.app.response.ESBResponse" /> -->
       </map>
     </property>
   </bean>

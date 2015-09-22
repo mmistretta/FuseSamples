@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:Address xmlns:p="http://www.davita.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.davita.com PatientDemographics.xsd " xsi:type="p:Address">
+  <p:addresstype>postal</p:addresstype>
+  <p:effectivedaterange>
+    <p:high/>
+    <p:low/>
+    <p:width/>
+  </p:effectivedaterange>
+  <p:line1>p:line1</p:line1>
+  <p:line2>p:line2</p:line2>
+  <p:line3>p:line3</p:line3>
+  <p:line4>p:line4</p:line4>
+  <p:city>p:city</p:city>
+  <p:county xsi:type="p:Code">
+    <p:code>p:code</p:code>
+    <p:displaytext>p:displaytext</p:displaytext>
+    <p:codesystem>p:codesystem</p:codesystem>
+    <p:codesystemversion>p:codesystemversion</p:codesystemversion>
+  </p:county>
+  <p:postalcode>p:postalcode</p:postalcode>
+  <p:state xsi:type="p:Code">
+    <p:code>p:code</p:code>
+    <p:displaytext>p:displaytext</p:displaytext>
+    <p:codesystem>p:codesystem</p:codesystem>
+    <p:codesystemversion>p:codesystemversion</p:codesystemversion>
+  </p:state>
+  <p:country xsi:type="p:Code">
+    <p:code>p:code</p:code>
+    <p:displaytext>p:displaytext</p:displaytext>
+    <p:codesystem>p:codesystem</p:codesystem>
+    <p:codesystemversion>p:codesystemversion</p:codesystemversion>
+  </p:country>
+</p:Address>
