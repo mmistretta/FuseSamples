@@ -23,7 +23,7 @@ public class InboundRoute extends RouteBuilder {
             .choice()
                 .when(header(CxfConstants.OPERATION_NAME).isEqualTo("postInbound"))
                     .bean(service, "postInbound")
-        // jaxb to xml
+                    .to("direct:transform")
                 .otherwise()
                     .log(LoggingLevel.WARN, "unknown method");
         //@formatter:on
