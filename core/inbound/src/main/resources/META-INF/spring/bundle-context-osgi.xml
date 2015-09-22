@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:camel="http://camel.apache.org/schema/spring"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:cxf="http://camel.apache.org/schema/cxf"
-       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:osgi="http://www.springframework.org/schema/osgi"
-       xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
-       xmlns:ctx="http://www.springframework.org/schema/context"
-       xmlns:util="http://www.springframework.org/schema/util"
-       xsi:schemaLocation="
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:camel="http://camel.apache.org/schema/spring"
+  xmlns:context="http://www.springframework.org/schema/context" xmlns:cxf="http://camel.apache.org/schema/cxf" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgi="http://www.springframework.org/schema/osgi" xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
+  xmlns:ctx="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
+  xsi:schemaLocation="
             http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd
             http://camel.apache.org/schema/spring
@@ -34,16 +28,25 @@
 
 <!--     placeholder configurer -->
 <!--     <ctx:property-placeholder properties-ref="appname.cfg.with.defaults"/> -->
-    
-    <context:annotation-config/>
-    <context:component-scan base-package="com.customer.app"/>
-    
-    <camel:camelContext xmlns="http://camel.apache.org/schema/spring">
-        <propertyPlaceholder id="properties" location="ref:customProperties"/>
-        <camel:contextScan/>
-        <camel:template id="producerTemplate"/>
-    </camel:camelContext>
-     <cxf:rsServer id="inboundService" address="http://0.0.0.0:8182/service"
-        serviceClass="com.customer.app.rest.impl.InboundResource"/>
+
+  <context:annotation-config />
+  <context:component-scan base-package="com.customer.app" />
+
+  <camel:camelContext xmlns="http://camel.apache.org/schema/spring">
+    <propertyPlaceholder id="properties" location="ref:customProperties" />
+    <camel:contextScan />
+    <camel:template id="producerTemplate" />
+  </camel:camelContext>
+  <cxf:rsServer id="inboundService" address="http://0.0.0.0:8182/service" serviceClass="com.customer.app.rest.impl.InboundResource"/>
+
+  <bean id="jaxbProvider" class="org.apache.cxf.jaxrs.provider.JAXBElementProvider">
+    <property name="unmarshallAsJaxbElement" value="true" />
+    <property name="jaxbElementClassMap">
+      <map>
+        <entry key="com.customer.app.Person" value="com.customer.app.Person" />
+        <entry key="com.customer.app.response.ESBResponse" value="com.customer.app.response.ESBResponse" />
+      </map>
+    </property>
+  </bean>
 
 </beans>

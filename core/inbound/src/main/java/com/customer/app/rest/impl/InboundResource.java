@@ -1,6 +1,10 @@
 package com.customer.app.rest.impl;
 
-import javax.ws.rs.GET;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
@@ -8,18 +12,36 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import com.customer.app.Person;
+
 @Service
 @Path("/rest")
 public class InboundResource {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(InboundResource.class);
 
-    @GET
+    @POST
     @Path("/inbound")
-    public Response postInbound() {
-        LOGGER.info("wtf?");
-        // TODO Auto-generated method stub
-        return null;
+    @Consumes("application/xml")
+    public Response postInbound(Person person) {
+        Response response = null;
+        String recordId = Long.toString(System.nanoTime());
+        LOGGER.info("Rest request received");
+
+        if (!isValidRequest(person)) {
+            LOGGER.error("Person was not valid");
+            // response = buildResponse(400);
+        } else {
+            try {
+                Map<String, Object> headers = new HashMap<String, Object>();
+            } catch (Exception ex) {
+                LOGGER.error("Something went wrong");
+            }
+        }
+        return response;
     }
 
+    private boolean isValidRequest(Person person) {
+        return true;
+    }
 }

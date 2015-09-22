@@ -36,6 +36,11 @@
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-annotations</artifactId>
     </dependency>
+    <dependency>
+        <groupId>com.customer.app</groupId>
+        <artifactId>artifacts</artifactId>
+        <version>${project.version}</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -51,7 +56,13 @@
             <Bundle-Name>Customer Application Core (Application Core) - ${project.artifactId}</Bundle-Name>
             <Import-Package>
             org.apache.camel.*,
-            javax.ws.rs, javax.ws.rs.core, org.slf4j, org.springframework.*, org.apache.cxf.*, com.fasterxml.*</Import-Package>
+            javax.ws.rs, 
+            javax.ws.rs.core, 
+            org.slf4j, 
+            org.springframework.*, 
+            org.apache.cxf.*, 
+            com.fasterxml.*, 
+            com.customer.app.*</Import-Package>
             <Export-Package />
           </instructions>
         </configuration>
