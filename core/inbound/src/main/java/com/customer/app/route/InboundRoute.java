@@ -6,7 +6,7 @@ import org.apache.camel.component.cxf.common.message.CxfConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.customer.app.rest.impl.InboundResource;
+import com.customer.app.processor.InboundProcessor;
 
 @Component
 public class InboundRoute extends RouteBuilder {
@@ -14,7 +14,7 @@ public class InboundRoute extends RouteBuilder {
     private static final String CXF_ENDPOINT = "cxfrs:bean:inboundService";
 
     @Autowired
-    InboundResource service;
+    InboundProcessor processor;
 
     @Override
     public void configure() throws Exception {
@@ -22,7 +22,7 @@ public class InboundRoute extends RouteBuilder {
         from(CXF_ENDPOINT)
             .choice()
                 .when(header(CxfConstants.OPERATION_NAME).isEqualTo("postInbound"))
-                    .bean(service, "postInbound")
+                    .bean(processor, "processInbound")
                     .to("direct:transform")
                 .otherwise()
                     .log(LoggingLevel.WARN, "unknown method");

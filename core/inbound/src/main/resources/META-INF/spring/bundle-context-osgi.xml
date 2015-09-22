@@ -37,6 +37,7 @@
     <camel:contextScan />
     <camel:template id="producerTemplate" />
   </camel:camelContext>
+  
   <cxf:rsServer id="inboundService" address="http://0.0.0.0:8182/service" serviceClass="com.customer.app.rest.impl.InboundResource"/>
 
   <bean id="jaxbProvider" class="org.apache.cxf.jaxrs.provider.JAXBElementProvider">
@@ -47,6 +48,12 @@
 <!--         <entry key="com.customer.app.response.ESBResponse" value="com.customer.app.response.ESBResponse" /> -->
       </map>
     </property>
+  </bean>
+  
+  <bean id="activemq" class="org.apache.activemq.camel.component.ActiveMQComponent">
+    <property name="brokerURL" value="tcp://0.0.0.0:61616"/>
+    <property name="userName" value="admin"/>
+    <property name="password" value="admin"/>
   </bean>
 
 </beans>

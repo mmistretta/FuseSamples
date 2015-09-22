@@ -1,3 +1,4 @@
+/home/marycochran/git/Customer-App/core/inbound/src/main/java/com/customer/app/processor/InboundProcessor.java
 /home/marycochran/git/Customer-App/core/inbound/src/main/java/com/customer/app/service/InboundService.java
 /home/marycochran/git/Customer-App/core/inbound/src/main/java/com/customer/app/rest/impl/InboundResource.java
 /home/marycochran/git/Customer-App/core/inbound/src/main/java/com/customer/app/route/ConverterRoute.java

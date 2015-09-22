@@ -27,6 +27,10 @@
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-cxf</artifactId>
     </dependency>
+        <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-jaxb</artifactId>
+    </dependency>
     <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-databind</artifactId>
@@ -62,7 +66,9 @@
             org.springframework.*, 
             org.apache.cxf.*, 
             com.fasterxml.*, 
-            com.customer.app.*</Import-Package>
+            com.customer.app.*,
+            org.apache.activemq.*,
+            javax.xml.bind.*</Import-Package>
             <Export-Package />
           </instructions>
         </configuration>
