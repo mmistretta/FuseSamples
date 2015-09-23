@@ -64,7 +64,6 @@
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
             <Bundle-Name>Customer Application Core (Application Core) - ${project.artifactId}</Bundle-Name>
             <Import-Package>
-              META-INF.xsd,
               org.apache.camel.*,
               javax.ws.rs,
               javax.ws.rs.core,

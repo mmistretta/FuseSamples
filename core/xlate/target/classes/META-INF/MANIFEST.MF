@@ -6,10 +6,19 @@ Created-By: Apache Maven Bundle Plugin
 Bundle-Vendor: Customer
 Build-Jdk: 1.7.0_79
 Bundle-Version: 1.0.0.SNAPSHOT
-Bnd-LastModified: 1442950570224
+Bnd-LastModified: 1443038779951
 Bundle-ManifestVersion: 2
-Bundle-License: http://www.apache.org/licenses/LICENSE-2.0
 Bundle-Description: Parent POM Customer Application
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0
+Import-Package: com.customer.app;version="[1.0,2)",com.sun.mdm.index.w
+ ebservice;version="[1.0,2)",javax.ws.rs;version="[2.0,3)",javax.ws.rs
+ .core;version="[2.0,3)",org.apache.activemq.camel.component,org.apach
+ e.camel;version="[2.12,3)",org.apache.camel.builder;version="[2.12,3)
+ ",org.apache.camel.converter.jaxb;version="[2.12,3)",org.apache.camel
+ .model;version="[2.12,3)",org.apache.camel.spi;version="[2.12,3)",org
+ .apache.cxf.jaxrs.provider;version="[2.7,3)",org.slf4j;version="[1.6,
+ 2)",org.springframework.beans.factory.annotation,org.springframework.
+ core.convert.converter,org.springframework.stereotype
 Bundle-SymbolicName: xlate
 Bundle-DocURL: http://www.customer.com
 
