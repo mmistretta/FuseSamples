@@ -38,7 +38,9 @@
     <camel:template id="producerTemplate" />
   </camel:camelContext>
   
-  <cxf:rsServer id="inboundService" address="http://0.0.0.0:8182/service" serviceClass="com.customer.app.rest.impl.InboundResource"/>
+  <cxf:rsServer id="inboundService" address="http://0.0.0.0:8182/service" serviceClass="com.customer.app.rest.impl.InboundResource">
+  <cxf:providers ref="jaxbProvider" />
+  </cxf:rsServer>
 
   <bean id="jaxbProvider" class="org.apache.cxf.jaxrs.provider.JAXBElementProvider">
     <property name="unmarshallAsJaxbElement" value="true" />
