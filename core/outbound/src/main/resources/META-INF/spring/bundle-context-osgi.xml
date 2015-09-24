@@ -1,23 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:osgi="http://www.springframework.org/schema/osgi"
-       xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
-       xmlns:ctx="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:camel="http://camel.apache.org/schema/spring"
+  xmlns:context="http://www.springframework.org/schema/context" xmlns:cxf="http://camel.apache.org/schema/cxf" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgi="http://www.springframework.org/schema/osgi" xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
+  xmlns:ctx="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
+  xsi:schemaLocation="
             http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://camel.apache.org/schema/spring
+            http://camel.apache.org/schema/spring/camel-spring.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.1.xsd
+            http://camel.apache.org/schema/cxf
+            http://camel.apache.org/schema/cxf/camel-cxf.xsd
+            http://cxf.apache.org/jaxrs 
+            http://cxf.apache.org/schemas/jaxrs.xsd
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context.xsd
             http://www.springframework.org/schema/osgi
             http://www.springframework.org/schema/osgi/spring-osgi.xsd
+            http://www.springframework.org/schema/util 
+            http://www.springframework.org/schema/util/spring-util-3.1.xsd
             http://www.springframework.org/schema/osgi-compendium
             http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd">
 
-    <!-- properties placeholder -->
-    <osgix:cm-properties id="appname.cfg.with.defaults" persistent-id="appname"/>
+  <context:annotation-config />
+  <context:component-scan base-package="com.customer.app" />
 
-    <!-- placeholder configurer -->
-    <ctx:property-placeholder properties-ref="appname.cfg.with.defaults"/>
+  <camel:camelContext xmlns="http://camel.apache.org/schema/spring">
+    <propertyPlaceholder id="properties" location="ref:customProperties" />
+    <camel:contextScan />
+    <camel:template id="producerTemplate" />
+  </camel:camelContext>
+  
+<!--   <cxf:rsServer id="inboundService" address="http://0.0.0.0:8182/service" serviceClass="com.customer.app.rest.impl.InboundResource"> -->
+<!--   <cxf:providers ref="jaxbProvider" /> -->
+<!--   </cxf:rsServer> -->
+
+  <bean id="jaxbProvider" class="org.apache.cxf.jaxrs.provider.JAXBElementProvider">
+    <property name="unmarshallAsJaxbElement" value="true" />
+    <property name="jaxbElementClassMap">
+      <map>
+<!--         <entry key="com.customer.app.Patient" value="com.customer.app.Patient" /> -->
+         <entry key="com.customer.app.response.ESBResponse" value="com.customer.app.response.ESBResponse" /> 
+      </map>
+    </property>
+  </bean>
+
+  <bean id="activemq" class="org.apache.activemq.camel.component.ActiveMQComponent">
+    <property name="brokerURL" value="tcp://0.0.0.0:61616" />
+    <property name="userName" value="admin" />
+    <property name="password" value="admin" />
+  </bean>
 
 </beans>
