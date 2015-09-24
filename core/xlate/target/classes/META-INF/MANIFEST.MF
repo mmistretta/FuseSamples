@@ -6,7 +6,7 @@ Created-By: Apache Maven Bundle Plugin
 Bundle-Vendor: Customer
 Build-Jdk: 1.7.0_79
 Bundle-Version: 1.0.0.SNAPSHOT
-Bnd-LastModified: 1443038779951
+Bnd-LastModified: 1443105882396
 Bundle-ManifestVersion: 2
 Bundle-Description: Parent POM Customer Application
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0

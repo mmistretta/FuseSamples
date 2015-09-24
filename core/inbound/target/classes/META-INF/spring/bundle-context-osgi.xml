@@ -23,12 +23,6 @@
             http://www.springframework.org/schema/osgi-compendium
             http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd">
 
-    <!-- properties placeholder -->
-<!--     <osgix:cm-properties id="appname.cfg.with.defaults" persistent-id="appname"/> -->
-
-<!--     placeholder configurer -->
-<!--     <ctx:property-placeholder properties-ref="appname.cfg.with.defaults"/> -->
-
   <context:annotation-config />
   <context:component-scan base-package="com.customer.app" />
 
@@ -47,7 +41,6 @@
     <property name="jaxbElementClassMap">
       <map>
         <entry key="com.customer.app.Patient" value="com.customer.app.Patient" />
-<!--         <entry key="com.customer.app.response.ESBResponse" value="com.customer.app.response.ESBResponse" /> -->
       </map>
     </property>
   </bean>

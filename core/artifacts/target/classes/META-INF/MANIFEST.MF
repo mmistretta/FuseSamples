@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1442950547561
+Bnd-LastModified: 1443105858570
 Build-Jdk: 1.7.0_79
 Built-By: marycochran
 Bundle-Description: Parent POM Customer Application

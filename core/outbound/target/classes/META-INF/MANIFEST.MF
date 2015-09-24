@@ -6,7 +6,7 @@ Created-By: Apache Maven Bundle Plugin
 Bundle-Vendor: Customer
 Build-Jdk: 1.7.0_79
 Bundle-Version: 1.0.0.SNAPSHOT
-Bnd-LastModified: 1443101865767
+Bnd-LastModified: 1443107470283
 Bundle-ManifestVersion: 2
 Bundle-Description: Parent POM Customer Application
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0
@@ -16,7 +16,8 @@ Import-Package: com.sun.mdm.index.webservice;version="[1.0,2)",javax.w
  he.camel.builder;version="[2.12,3)",org.apache.camel.converter.jaxb;v
  ersion="[2.12,3)",org.apache.camel.model;version="[2.12,3)",org.apach
  e.camel.spi;version="[2.12,3)",org.apache.cxf.jaxrs.provider;version=
- "[2.7,3)",org.slf4j;version="[1.6,2)",org.springframework.stereotype
+ "[2.7,3)",org.slf4j;version="[1.6,2)",org.springframework.beans.facto
+ ry.annotation,org.springframework.stereotype
 Bundle-SymbolicName: outbound
 Bundle-DocURL: http://www.customer.com
 
